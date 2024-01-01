@@ -5,14 +5,14 @@ class Calculator
 {
 private:
 
-	double num1;
-	double num2;
+	double num1 ;
+	double num2 ;
 
 public:
-	Calculator(double& num1, double& num2)
+	Calculator()
 	{
-		this->num1 = num1;
-		this->num2 = num2;
+		this->num1 = 1;
+		this->num2 = 1;
 	};
 	bool  set_num1(double num1)
 	{
@@ -37,27 +37,27 @@ public:
 			return false;
 	}
 
-	double add(double num1, double num2)
+	double add()
 	{
 		return num1 + num2;
 	}
-	double multiply(double num1, double num2)
+	double multiply()
 	{
 		return num1 * num2;
 	}
-	double subtract_1_2(double num1, double num2)
+	double subtract_1_2()
 	{
 		return num1 - num2;
 	}
-	double subtract_2_1(double num1, double num2)
+	double subtract_2_1()
 	{
 		return num2 - num1;
 	}
-	double divide_1_2(double num1, double num2)
+	double divide_1_2()
 	{
 		return num1 / num2;
 	}
-	double divide_2_1(double num1, double num2)
+	double divide_2_1()
 	{
 		return num2 / num1;
 	}
@@ -65,10 +65,11 @@ public:
 
 	int main()
 	{
+		
 		double num1;
 		double num2;
 
-		Calculator cal(num1, num2);
+		Calculator cal;
 
 		std::cout << "Input num1 : ";
 		std::cin >> num1;
@@ -90,12 +91,12 @@ public:
 			std::cin >> num2;
 		}
 
-		std::cout << "num1 + num2  = " << cal.add(num1, num2) << std::endl;
-		std::cout << "num1 * num2  = " << cal.multiply(num1, num2) << std::endl;
-		std::cout << "num1 - num2  = " << cal.subtract_1_2(num1, num2) << std::endl;
-		std::cout << "num2 - num1  = " << cal.subtract_2_1(num1, num2) << std::endl;
-		std::cout << "num1 / num2  = " << cal.divide_1_2(num1, num2) << std::endl;
-		std::cout << "num2 / num1  = " << cal.divide_2_1(num1, num2) << std::endl;
+		std::cout << "num1 + num2  = " << cal.add() << std::endl;
+		std::cout << "num1 * num2  = " << cal.multiply() << std::endl;
+		std::cout << "num1 - num2  = " << cal.subtract_1_2() << std::endl;
+		std::cout << "num2 - num1  = " << cal.subtract_2_1() << std::endl;
+		std::cout << "num1 / num2  = " << cal.divide_1_2() << std::endl;
+		std::cout << "num2 / num1  = " << cal.divide_2_1() << std::endl;
 
 
 		return 0;
