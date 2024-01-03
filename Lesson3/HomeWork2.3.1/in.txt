@@ -1,0 +1,13 @@
+3
+Moscow
+Pushkina
+55
+5
+Kazan
+Lenina
+35
+15
+Vladimir
+Mira
+25
+45
