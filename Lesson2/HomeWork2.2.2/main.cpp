@@ -4,12 +4,12 @@
 class Counter
 {
 private:
-	
+
 	int value;
 
-	
+
 public:
-	Counter () 
+	Counter()
 	{
 		this->value = 1;
 	}
@@ -21,10 +21,9 @@ public:
 	{
 		this->value = this->value + 1;
 	}
-	void counterPrint()
+	int counterGetValue()
 	{
-		std::cout << this->value;
-		std::cout << "\n";
+		return this->value;
 	}
 	void counterSubtraction()
 	{
@@ -54,15 +53,15 @@ public:
 
 
 		std::cout << "Goodbye";
-	
+
 	}
 };
 
 
 int main()
 {
-	
-	
+
+
 	std::string choice_1;
 	std::string choice_2;
 	std::string yes = "yes";
@@ -73,8 +72,8 @@ int main()
 	std::string end = "x";
 	int value;
 
-	
-	
+
+
 
 	std::cout << "Do you want to specify the initial value of the counter? Input yes or no : ";
 	std::cin >> choice_1;
@@ -85,7 +84,7 @@ int main()
 		std::cin >> value;
 		Counter count(value);
 		count.counterInAction;
-		
+
 	else if (choice_1 == no)
 	{
 		Counter count;
@@ -104,7 +103,7 @@ int main()
 			}
 			else if (choice_2 == print)
 			{
-				count.counterPrint();
+				std::cout << count.counterGetValue();
 			}
 		} while (choice_2 != end);
 
@@ -113,9 +112,9 @@ int main()
 	}
 	std::cout << "\n";
 
-	
 
-	
+
+
 
 	return 0;
-}
+	}
