@@ -23,45 +23,19 @@ public:
 	}
 	int counterGetValue()
 	{
-		return this->value;
+		return value;
 	}
 	void counterSubtraction()
 	{
 		this->value = this->value - 1;
 	}
 
-	void counterInAction()
-	{
-		do
-		{
-			std::cout << "Input command('+', '-', '='  or  'x') : ";
-			std::cin >> choice_2;
 
-			if (choice_2 == sum)
-			{
-				count.counterSum();
-			}
-			else if (choice_2 == subtraction)
-			{
-				count.counterSubtraction();
-			}
-			else if (choice_2 == print)
-			{
-				count.counterPrint();
-			}
-		} while (choice_2 != end);
-
-
-		std::cout << "Goodbye";
-
-	}
 };
 
 
 int main()
 {
-
-
 	std::string choice_1;
 	std::string choice_2;
 	std::string yes = "yes";
@@ -83,8 +57,28 @@ int main()
 		std::cout << "Input value : ";
 		std::cin >> value;
 		Counter count(value);
-		count.counterInAction;
+		do
+		{
+			std::cout << "Input command('+', '-', '='  or  'x') : ";
+			std::cin >> choice_2;
 
+			if (choice_2 == sum)
+			{
+				count.counterSum();
+			}
+			else if (choice_2 == subtraction)
+			{
+				count.counterSubtraction();
+			}
+			else if (choice_2 == print)
+			{
+				std::cout << count.counterGetValue() << "\n";
+			}
+		} while (choice_2 != end);
+
+		std::cout << "\n";
+
+	}
 	else if (choice_1 == no)
 	{
 		Counter count;
@@ -103,18 +97,14 @@ int main()
 			}
 			else if (choice_2 == print)
 			{
-				std::cout << count.counterGetValue();
+				std::cout << count.counterGetValue() << "\n";
+
 			}
 		} while (choice_2 != end);
 
-
-		std::cout << "Goodbye";
 	}
-	std::cout << "\n";
 
-
-
-
+	std::cout << "Goodbye";
 
 	return 0;
-	}
+}
