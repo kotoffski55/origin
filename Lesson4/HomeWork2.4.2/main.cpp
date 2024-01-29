@@ -1,23 +1,51 @@
 #include<iostream>
-// Родительский класс  треугольник  
-class Triangle
+// Родительский класс  треугольник 
+
+
+class Figure
 {
-protected:
-	// защищенные поля  
-	std::string name = "Triangle";
-
-	int side_a = 10;
-	int side_b = 20;
-	int side_c = 30;
 	
-	int angel_a = 50;
-	int angel_b = 60;
-	int angel_c = 70;
-
+		// защищенные поля 
+protected:
+		std::string name;
+		int side_a = 10;
+		int side_b = 20;
+		int side_c = 30;
+		int side_d = 40;
+		int angel_a = 50;
+		int angel_b = 60;
+		int angel_c = 70;
+		int angel_d = 80;
 public:
 
-	//вывод информации  о треугольнике 
 	virtual void print_info()
+	{
+		std::cout << name << ":" << std::endl;
+		std::cout << "Sides : " << "a = " << side_a << " b = " << side_b << " c = " << side_c << " d = " << side_d << std::endl;
+		std::cout << "Angels : " << "A = " << angel_a << " B = " << angel_b << " C = " << angel_c << " D = " << angel_d << std::endl;
+		std::cout << "\n";
+	}
+	
+};
+
+class Triangle : public Figure
+{
+	
+public:
+
+	Triangle(const int& side_a, const int& side_b, const int& side_c, const int& angel_a, const int& angel_b, const int& angel_c)
+	{
+		name = "Triangle";
+		this->side_a = side_a;
+		this->side_b = side_b;
+		this->side_c = side_c;
+		this->angel_a = angel_a;
+		this->angel_b = angel_b;
+		this->angel_c = angel_c;
+	}
+
+	//вывод информации  о треугольнике 
+	void print_info() override
 	{
 		std::cout << name << ":" << std::endl;
 		std::cout << "Sides : " << "a = " << side_a << " b = " << side_b << " c = " << side_c << std::endl;
@@ -25,110 +53,49 @@ public:
 		std::cout << "\n";
 	}
 
-	
-	//Геттеры  для  строн треугольника  
-	int  getSideA()
-	{
-		return side_a;
-	}
-	int  getSideB()
-	{
-		return side_b;
-	}
-	int  getSideC()
-	{
-		return side_c;
-	}
 
-	int getAngelA()
-	{
-		return angel_a;
-	}
-	int getAngelB()
-	{
-		return angel_b;
-	}
-	int getAngelC()
-	{
-		return angel_c;
-	}
-
-	std::string getName()
-	{
-		return name;
-	}
 };
-
-//родительский клаcc четырехугольник  
-class Quadrangle 
+//Функция вызова метода печати 
+void print(Figure* figure)
 {
-protected:
-	// защищенные поля  
-	std::string name = "Quadrangle";
+	figure->print_info();
+}
 
-	int side_a = 10;
-	int side_b = 20;
-	int side_c = 30;
-	int side_d = 40;
 
-	int angel_a = 50;
-	int angel_b = 60;
-	int angel_c = 70;
-	int angel_d = 80;
+  
+class Rectangle :public Figure
+{
+
 
 public:
-	//функция вывода на консоль
-	//   
-	virtual void print_info() 
+
+	Rectangle(const int& side_a, const int& side_b)
+	{
+		name = "Rectangle";
+		this->side_a = side_a;
+		this->side_b = side_b;
+		side_c = side_a ;
+		side_d = side_b;
+		
+		this->angel_a = 90;
+		this->angel_b = 90;
+		this->angel_c = 90;
+		this->angel_d = 90;
+		
+	}
+	void print_info() override
 	{
 		std::cout << name << ":" << std::endl;
 		std::cout << "Sides : " << "a = " << side_a << " b = " << side_b << " c = " << side_c << " d = " << side_d << std::endl;
 		std::cout << "Angels : " << "A = " << angel_a << " B = " << angel_b << " C = " << angel_c << " D = " << angel_d << std::endl;
 		std::cout << "\n";
 	}
-	//Геттеры  для  строн треугольника  
-	int  getSideA()
-	{
-		return side_a;
-	}
-	int  getSideB()
-	{
-		return side_b;
-	}
-	int  getSideC()
-	{
-		return side_c;
-	}
-	int  getSideD()
-	{
-		return side_d;
-	}
 
-	int getAngelA()
-	{
-		return angel_a;
-	}
-	int getAngelB()
-	{
-		return angel_b;
-	}
-	int getAngelC()
-	{
-		return angel_c;
-	}
-	int getAngelD()
-	{
-		return angel_d;
-	}
 
-	std::string getName()
-	{
-		return name;
-	}
 };
 
 
-//Классы наследники для треугольника  
+/*
 
 class RightTriangle : public Triangle
 {
@@ -260,10 +227,17 @@ public:
 		std::cout << "\n";
 	}
 };
-
+*/
 int main()
 {
-	Triangle triangle;
+	Figure figure;
+	Triangle triangle(20, 30, 800, 500, 600, 700);
+	Rectangle rectangle(50, 60);
+	
+	
+	print(&triangle);
+	print(&rectangle);
+	/*
 	RightTriangle right_triangle;
 	IsoscelesTriangle isosceles_triangle;
 
@@ -272,6 +246,7 @@ int main()
 	Square square;
 	Parallelogram parallelogram;
 	Rhombus rhombus;
+	
 
 	Triangle* ptr_triangle = &triangle;
 	ptr_triangle->print_info();
@@ -296,6 +271,7 @@ int main()
 
 	Quadrangle* ptr_rhombus = &rhombus;
 	ptr_rhombus->print_info();
+	*/
 
 
 	return 0;
