@@ -30,10 +30,7 @@ public:
 	{
 		return city;
 	}
-	void setCity(std::string)
-	{
-		this->city = city;
-	}
+
 };
 
 
@@ -66,29 +63,24 @@ int main()
 		fin >> house_number;
 		fin >> appart_number;
 		address_array[i] = Address(city, street, house_number, appart_number);
-		
+
 	}
 
-std::string temp;
-
-
-	for (int i = 0; i < number_of_addresses - 1; i++) 
+	for (int i = 0; i < number_of_addresses - 1; i++)
 	{
 		for (int j = 0; j < number_of_addresses - i - 1; j++)
 		{
-			if (address_array[j].getCity() > address_array[j + 1].getCity() )
+			if (address_array[j].getCity() > address_array[j + 1].getCity())
 			{
-				temp = address_array[j].getCity();
-				address_array[j].getCity() = address_array[j + 1].getCity();
-				address_array[j + 1].getCity() = temp;
+				std::swap(address_array[j], address_array[j + 1]);
 			}
-			
-		}
-		
-	}
-	
 
-	for (int i = 0;i < number_of_addresses; i++)
+		}
+
+	}
+
+
+	for (int i = 0; i < number_of_addresses; i++)
 	{
 		fout << address_array[i].getOutPutAddress() << "\n";
 	}

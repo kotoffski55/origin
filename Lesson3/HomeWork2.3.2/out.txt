@@ -1,8 +1,8 @@
 7
-Moscow,Mira,15,95
-Vladimir,Pobeda,35,15
-Kazan,Usmanova,45,55
-Kaliningrad,Lenina,15,85
-Ufa,Pushkina,65,75
 Anapa,Morskaya,85,55
+Kaliningrad,Lenina,15,85
+Kazan,Usmanova,45,55
+Moscow,Mira,15,95
+Ufa,Pushkina,65,75
+Vladimir,Pobeda,35,15
 Zelenograd,Zelenaya,15,25
