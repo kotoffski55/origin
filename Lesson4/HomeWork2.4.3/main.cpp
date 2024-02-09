@@ -1,30 +1,16 @@
 #include<iostream>
-enum  Examination 
-{
-	Wrong,
-	Right
-};
+
 class Figure
 {
 protected:
 	std::string name = "Figure";
 
-	int side_a = 0;
-	int side_b = 0;
-	int side_c = 0;
-	int side_d = 0;
-
-	int angel_a = 0;
-	int angel_b = 0;
-	int angel_c = 0;
-	int angel_d = 0;
-
+	
 public:
 	
 	virtual bool check()
 	{
-		if ((side_a == 0) && (side_b == 0) && (side_c == 0) && (side_d == 0))
-		return Right;
+			return true;
 	}
 	virtual void print_info()
 	{
@@ -42,6 +28,15 @@ void print(Figure* figure)
 
 class Triangle : public Figure
 {
+protected:
+	int side_a = 0;
+	int side_b = 0;
+	int side_c = 0;
+
+	int angel_a = 0;
+	int angel_b = 0;
+	int angel_c = 0;
+	
 public:
 	Triangle() {}
 
@@ -55,18 +50,18 @@ public:
 		this->angel_b = angel_b;
 		this->angel_c = angel_c;
 	}
-	bool check() override
+	virtual bool check() 
 	{
 		if ((side_a > 0) && (side_b > 0) && (side_c > 0) && ((angel_a + angel_b + angel_c) == 180))
 		{
-			return Right;
+			return true;
 		}
-		else if((side_a <= 0) || (side_b <= 0) || (side_c <= 0) || ((angel_a + angel_b + angel_c) != 180))
+		else 
 		{
-			return Wrong;
+			return false;
 		}
 	}
-	void print_info() override
+	virtual void print_info() 
 	{
 		std::cout << name << ":" << std::endl;
 		std::cout << ((check() == 0) ? "Wrong" : "Right") << std::endl;
@@ -95,7 +90,7 @@ public:
 	{
 		if ((angel_c) != 90)
 		{
-			return Wrong;
+			return false;
 		}
 		else
 		{
@@ -123,7 +118,7 @@ public:
 	{
 		if ((side_c != side_a) || (angel_c != angel_a))
 		{
-			return Wrong;
+			return  false;
 		}
 		else
 		{
@@ -150,17 +145,28 @@ public:
 	{
 		if ((angel_a != 60) || (angel_c != 60) || (angel_b != 60) || (side_a != side_c) || (side_a != side_b))
 		{
-			return Wrong;
+			return false;
 		}
 		else
 		{
 			Triangle::check();
+		    return true;
 		}
 	}
 };
 
 class Quadrangle :public Figure
 {
+protected:
+	int side_a = 0;
+	int side_b = 0;
+	int side_c = 0;
+	int side_d = 0;
+
+	int angel_a = 0;
+	int angel_b = 0;
+	int angel_c = 0;
+	int angel_d = 0;
 
 public:
 
@@ -180,18 +186,18 @@ public:
 		this->angel_d = angel_d;
 
 	}
-	bool check() override
+	virtual bool check()
 	{
 		if ((side_a > 0) && (side_b > 0) && (side_c > 0) && (side_d > 0) && ((angel_a + angel_b + angel_c + angel_d) == 360))
 		{
-			return Right;
+			return true;
 		}
-		else if ((side_a <= 0) || (side_b <= 0) || (side_c <= 0) || (side_d <= 0) ||((angel_a + angel_b + angel_c + angel_d) != 360))
+		else 
 		{
-			return Wrong;
+			return false;
 		}
 	}
-	void print_info() override
+	virtual void print_info()
 	{
 		std::cout << name << ":" << std::endl;
 		std::cout << ((check() == 0) ? "Wrong" : "Right") << std::endl;
@@ -226,11 +232,12 @@ public:
 	{
 		if ((angel_a != 90) || (angel_c != 90) || (angel_b != 90) || (angel_d != 90) || (side_a != side_c) || (side_d != side_b))
 		{
-			return Wrong;
+			return false;
 		}
 		else
 		{
 			Quadrangle::check();
+			return true;
 		}
 	}
 };
@@ -258,11 +265,12 @@ public:
 	{
 		if ((angel_a != 90) || (angel_c != 90) || (angel_b != 90) || (angel_d != 90) || (side_a != side_c) || (side_a != side_b) || (side_a != side_d))
 		{
-			return Wrong;
+			return false;
 		}
 		else
 		{
 			Quadrangle::check();
+			return true;
 		}
 	}
 };
@@ -288,11 +296,12 @@ public:
 	{
 		if ((angel_a != angel_c) || (angel_b != angel_d) || (side_a != side_c) || (side_d != side_b))
 		{
-			return Wrong;
+			return false;
 		}
 		else
 		{
 			Quadrangle::check();
+			return true;
 		}
 	}
 };
@@ -317,11 +326,12 @@ public:
 	{
 		if ((angel_a != angel_c ) || (angel_b != angel_d) || (side_a != side_c) || (side_a != side_b) || (side_a != side_d))
 		{
-			return Wrong;
+			return false;
 		}
 		else
 		{
 			Quadrangle::check();
+			return true;
 		}
 	}
 };
@@ -329,7 +339,7 @@ public:
 int main()
 {
 	Figure figure;
-	Triangle triangle(20, 30, 800, 120, 30, 30);
+	Triangle triangle(20, 30, 800, 120, 30, 50);
 	RightTriangle right_triangle(5, 10, 15, 80, 10);
 	IsoscelesTriangle isosceles_triangle(25, 30, 10, 160);
 	EquilateralTriangle equilateral_triangle(125);
