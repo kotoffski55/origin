@@ -20,17 +20,22 @@ void print(Figure* figure)
 
 int main()
 {
+	
 	try
 	{
-		//Triangle triangle(20, 30, 800, 100, 60, 60);
-		RightTriangle right_triangle(5, 10, 15, 20, 30);
+		 RightTriangle right_triangle(5, 10, 15, 30, 40);
+		 print(&right_triangle);
 	}
-	catch (const Errors& ex)
+	catch (Errors err)
 	{
-		std::cout << ex.what();
+		std::cout << err.what();
 	}
 	
-	RightTriangle right_triangle(5, 10, 15, 20, 30);
+	
+	
+	
+	//Triangle triangle(20, 30, 800, 60, 80, 50);
+	//RightTriangle right_triangle(5, 10, 15, 20, 30);
 	//IsoscelesTriangle isosceles_triangle(25, 30, 100, 70);
 	//EquilateralTriangle equilateral_triangle(125);
 	//Rectangle rectangle(50, 60);
@@ -39,7 +44,7 @@ int main()
 	//Parallelogram parallelogram(51, 52, 53, 54);
 	//Rhombus rhombus(75, 123, 124);
 
-	//print(&right_triangle);
+	
 	//print(&isosceles_triangle);
 	//print(&equilateral_triangle);
 	//print(&quadrangle);

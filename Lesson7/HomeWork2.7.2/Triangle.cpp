@@ -17,7 +17,7 @@ void Triangle::print_info()
 
 Triangle::Triangle(const int& side_a, const int& side_b, const int& side_c, const int& angel_a, const int& angel_b, const int& angel_c)
 {
-	
+	if ((angel_a + angel_b + angel_c) != 180) throw Errors("Error creating figure. Reason: large angles are not equal to 180");
 	name = "Triangle";
 	this->side_a = side_a;
 	this->side_b = side_b;
@@ -25,7 +25,5 @@ Triangle::Triangle(const int& side_a, const int& side_b, const int& side_c, cons
 	this->angel_a = angel_a;
 	this->angel_b = angel_b;
 	this->angel_c = angel_c;
-
-	if ((angel_a + angel_b + angel_c) != 180) throw Errors();
-	else std::cout << "+" ;
+		
 }

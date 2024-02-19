@@ -1,8 +1,13 @@
 #pragma once
 #include<exception>
-#include"Errors.h"
+#include<iostream>
 class Errors : public std::exception
 {
+private:
+    std::string err;
+
 public:
-	const char* what() const override;
+    Errors(std::string _err);
+   
+    virtual const char* what();
 };

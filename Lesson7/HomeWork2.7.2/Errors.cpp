@@ -1,6 +1,10 @@
 #include <exception>
 #include"Errors.h"
-const char* Errors::what() const
+#include<iostream>
+
+Errors::Errors(std::string _err) : err(_err){}
+
+const char* Errors:: what()
 {
-	return "Error creating figure.Reason: sum of angles does not equal 180";
-};
+	return err.c_str();
+}
