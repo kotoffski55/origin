@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\ALGOCPP-16\Lesson6\HomeWork3.6.3\main.cpp(5,12): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\ALGOCPP-16\Lesson6\HomeWork3.6.3\main.cpp(17,13): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\ALGOCPP-16\Lesson6\HomeWork3.6.3\main.cpp(18,13): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\ALGOCPP-16\Lesson6\HomeWork3.6.3\main.cpp(54): warning C4715: find_substring_light_rabin_karp: значение возвращается не при всех путях выполнения

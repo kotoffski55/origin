@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\ALGOCPP-16\Lesson6\Homework3.6.1\main.cpp(5,12): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  Homework3.6.1.vcxproj -> C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\ALGOCPP-16\Lesson6\Homework3.6.1\x64\Debug\Homework3.6.1.exe
