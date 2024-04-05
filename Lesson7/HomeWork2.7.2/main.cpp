@@ -25,6 +25,8 @@ int main()
 	{
 		 RightTriangle right_triangle(5, 10, 15, 30, 40);
 		 print(&right_triangle);
+		 Triangle triangle(20, 30, 800, 60, 80, 50);
+		 print(&triangle);
 	}
 	catch (Errors err)
 	{
@@ -34,7 +36,7 @@ int main()
 	
 	
 	
-	//Triangle triangle(20, 30, 800, 60, 80, 50);
+Triangle triangle(20, 30, 800, 60, 80, 50);
 	//RightTriangle right_triangle(5, 10, 15, 20, 30);
 	//IsoscelesTriangle isosceles_triangle(25, 30, 100, 70);
 	//EquilateralTriangle equilateral_triangle(125);
