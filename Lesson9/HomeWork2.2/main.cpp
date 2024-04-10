@@ -1,4 +1,3 @@
-#include<iostream>
 
 #include<iostream>
 
@@ -6,21 +5,45 @@ class smart_array
 {
 private:
 	int* arr;
+	int* arr2;
 	int count = 0;
 	size_t size_;
 public:
 
-	smart_array(const smart_array&) = delete;
-	smart_array& operator=(const smart_array&) = delete;
-
+	
+	
 	smart_array(size_t snz)
 	{
 		size_ = snz;
 		arr = new int[size_];
 	}
-	~smart_array()
+	smart_array(const smart_array& other)
+	{
+		for (int i = 0; i < size_; i++)
+		{
+			arr2[i] = other.arr[i];
+		}
+	}
+	smart_array& operator=(const smart_array& other)
 	{
 		delete[] arr;
+		arr2 = new int[size_];
+		
+		if (&other == this)
+		{
+			throw std::exception{ "Error" };
+		}
+		
+		for (int i = 0; i < count; i++)
+		{
+			arr2[i] = other.arr[i];
+		}
+
+		return *this;
+	}
+	~smart_array()
+	{
+		delete[] arr2;
 	}
 	void add_element(int value)
 	{
@@ -34,20 +57,14 @@ public:
 	}
 	int  get_element(int index)
 	{
-		if (index < 0 && index > size_)
+		if (index < 0 && index > count)
 		{
-			throw std::string{ "Error" };
+			throw std::string{ "There is no element added at this index" };
 		}
 		return arr[index];
 	}
-	int get_size()
-	{
-		return size_;
-	}
-	void copy_value(int value ,int index)
-	{
-		arr[index] = value;
-	}
+	
+	
 
 };
 
@@ -62,17 +79,8 @@ try {
 	new_array.add_element(44);
 	new_array.add_element(34);
 	
-	
-		if (arr.get_size() > new_array.get_size())
-		{
-			int new_size = new_array.get_size();
-			for (int i = 0; i < new_size; i++)
-			{
-				int copy_value = new_array.get_element(i);
-				new_array.copy_value(copy_value, i);
-			}
-		}
-	}
+	arr = new_array;
+}
 
 catch (const std::exception& ex) {
 	std::cout << ex.what() << std::endl;

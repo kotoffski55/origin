@@ -24,7 +24,7 @@ public:
 	{
 		if (count > size_)
 		{
-			throw std::string{ "Error" };
+			throw std::exception{ "Error" };
 		}
 		else
 		arr[count] = value;
@@ -32,9 +32,9 @@ public:
 	}
 	int  get_element(int index)
 	{
-		if (index < 0 && index > size_)
-		{
-			throw std::string{ "Error" };
+		if (index < 0 || index > count)
+		{ 
+			throw std::exception{"There is no element added at this index"};
 		}
 		return arr[index];
 	}
@@ -50,7 +50,7 @@ try {
 	arr.add_element(155);
 	arr.add_element(14);
 	arr.add_element(15);
-	std::cout << arr.get_element(4) << std::endl;
+	std::cout << arr.get_element(1) << std::endl;
 }
 catch (const std::exception& ex) {
 	std::cout << ex.what() << std::endl;

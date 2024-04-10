@@ -3,33 +3,34 @@
 #include<vector>
 using namespace std;
 
-template<class T>
-T  pow (T a)
-{
-	return a * a;
+        template<class T>
+		T sqrt_(T x)
+		{
+			vector<T> sqrt_(vector<T> v )
+			{
+				for (size_t i = 0; i < v.size(); ++i)
+				{
+					v[i] = pow(v[i], 2);
+				}
+				return v;
+			}
+			return x * x;
+		}
+	
 
-}
-template<>
-vector <int> pow(vector<int> _myvector)
-{
-	vector<int> result(_myvector.size());
-	for (int i = 0; i < 10; i++)
-	{
-		result[i] = _myvector[i] * _myvector[i];
-
-		return result;
-	}
-}
-
+	
 int main()
 {
-	
+
+	int y = sqrt_(5);
 	vector <int> Myvector{ 1 , 2, 3 };
 	
-	int sqrt_int = pow<int>(2);
-  
-	vector <int> pow(vector<int> Myvector);
-    
+	int x = sqrt_(Myvector)[2];
 	
+
+	cout << x;
+    cout << y;
+	 
+
 	return 0;
 }
