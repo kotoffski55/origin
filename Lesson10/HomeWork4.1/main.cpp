@@ -6,17 +6,18 @@ using namespace std;
         template<class T>
 		T sqrt_(T x)
 		{
-			vector<T> sqrt_(vector<T> v )
-			{
-				for (size_t i = 0; i < v.size(); ++i)
-				{
-					v[i] = pow(v[i], 2);
-				}
-				return v;
-			}
+			
 			return x * x;
 		}
-	
+	   template<class T> 
+	   vector<T> sqrt_(vector<T> v)
+	   {
+		   for (size_t i = 0; i < v.size(); ++i)
+		   {
+			   v[i] = pow(v[i], 2);
+		   }
+		   return v;
+	   }
 
 	
 int main()
