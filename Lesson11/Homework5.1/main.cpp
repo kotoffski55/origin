@@ -23,7 +23,6 @@ int main()
 		else
 			key->second++;
 	}
-	
 	for (auto itr = map_char.begin(); itr != map_char.end(); ++itr)
 	{
 		if (itr->second != 0)
