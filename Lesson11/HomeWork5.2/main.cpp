@@ -4,7 +4,7 @@
 #include <string>
 #include <cctype>
 
-int main()
+int main_1()
 {
 	std::vector<int> input;
 	int value;

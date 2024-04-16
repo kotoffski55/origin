@@ -4,7 +4,7 @@
 #include<map>
 #include<string>
 
-int main()
+int main_2()
 {
 	std::string new_string;
 	std::multimap <char, int> map_char;
