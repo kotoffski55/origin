@@ -19,11 +19,10 @@ public:
     {};
     ~tridiagonal_matrix() { std::cout << "destructor called\n"; }
 
-    tridiagonal_matrix clone()
+    
+    std::unique_ptr<tridiagonal_matrix> clone()
     {
-        //std::unique_ptr<tridiagonal_matrix> ptr(new tridiagonal_matrix(m_down,m_middle,m_middle));
-        auto ptr = std::make_unique<tridiagonal_matrix>(tridiagonal_matrix(m_down, m_middle, m_middle));  
-        return *ptr;
+        return std::make_unique<tridiagonal_matrix>(m_down, m_upper, m_middle);
     }
 };
 
