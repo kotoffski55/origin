@@ -5,16 +5,25 @@
 
 class big_integer
 {
-public:
+private:
 
 	std::vector<int> value;
-	int size;
+   
 public:
 	big_integer() {};
 
+	big_integer& operator=(big_integer&& other) noexcept
+	{
+		{
+			value = std::move(other.value);
+		}
+
+		return *this;
+	}
+
 	big_integer(std::string _value)
 	{
-		size = _value.length();
+		int size = _value.length();
 
 		for (int i = 0; i < size; i++)
 		{
@@ -22,21 +31,13 @@ public:
 			value.push_back(int_value);
 		}
 	}
-	big_integer(big_integer&& moved)
+	big_integer(big_integer&& other) noexcept
 	{
-		size = moved.size;
-		value = moved.value;
-	}
-	big_integer& operator=(big_integer&& moved)
-	{
-		if (this != &moved)
 		{
-			size = moved.size;
-			value = moved.value;
+			value = std::move(other.value);
 		}
-
-		return *this;
 	}
+	
 	~big_integer()
 	{
 
@@ -65,9 +66,17 @@ public:
 			}
 			result.value.push_back(sum);
 		}
-		std::reverse(result.value.begin(), result.value.end());
+	   std::reverse(result.value.begin(), result.value.end());
 	   return result;
 	}
+	void print_value()
+	{
+		for (auto itr = value.begin(); itr != value.end(); itr++)
+		{
+			std::cout << *itr;
+		}
+	}
+	
 
 };
 int main()	
@@ -75,9 +84,7 @@ int main()
 	auto number1 = big_integer("143");
 	auto number2 = big_integer("78529");
 	auto result = number1 + number2;
-	for (auto itr = result.value.begin(); itr != result.value.end(); itr++)
-	{
-		std::cout << *itr;
-	}
+	result.print_value();
+	
 	return 0;
 }
