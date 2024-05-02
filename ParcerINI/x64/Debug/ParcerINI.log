@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\include\filesystem(12): warning STL4038: The contents of <filesystem> are available only with C++17 or later.
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\ParcerINI\main.cpp(25,24): warning C4101: ex: неиспользованная локальная переменная
+  ParcerINI.vcxproj -> C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\ParcerINI\x64\Debug\ParcerINI.exe
