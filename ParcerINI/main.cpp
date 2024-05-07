@@ -14,13 +14,12 @@ int main()
 	try
 	{
 		ini_parcer parser("test.ini");
-		for (int i = 0; i < 100; i++)
+		for (int i = 0; i < parser.get_size(); i++)
 		{
-			//std::cout << parser.vec_value[i];
+			std::cout << parser.get_value(i);
 		}
 		
-		auto value = parser.get_value("value");
-		std::cout << value;
+		//parser.sections_and_values.find("Section1");// ?????????????????????
 	}
 	catch(std::exception& ex)
 	{

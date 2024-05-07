@@ -1,0 +1,11 @@
+﻿  main.cpp
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\ProjectWebinar(FUNC)\main.cpp(9,10): error C2027: использование неопределенного типа "B"
+  C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\ProjectWebinar(FUNC)\main.cpp(3,7):
+   см. объявление "B"
+  
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\ProjectWebinar(FUNC)\main.cpp(18,16): error C2248: A::get_value_B1: невозможно обратиться к private член, объявленному в классе "A"
+  C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\ProjectWebinar(FUNC)\main.cpp(7,6):
+   см. объявление "A::get_value_B1"
+  C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\ProjectWebinar(FUNC)\main.cpp(4,7):
+   см. объявление "A"
+  
