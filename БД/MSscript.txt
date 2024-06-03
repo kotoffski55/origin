@@ -1,0 +1,44 @@
+CREATE TABLE IF NOT EXISTS genre(
+id SERIAL PRIMARY KEY,
+name VARCHAR(60) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS author(
+id SERIAL PRIMARY KEY,
+name VARCHAR(60) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS trek(
+id SERIAL PRIMARY KEY,
+name VARCHAR(60) NOT NULL,
+time TIME
+);
+
+CREATE TABLE IF NOT EXISTS album(
+id INTEGER PRIMARY KEY REFERENCES trek(id),
+name VARCHAR(60) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS collection(
+id SERIAL PRIMARY KEY,
+name VARCHAR(60) NOT NULL,
+year_realese INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS genre_author (
+	genre_id INTEGER REFERENCES genre(id),
+	author_id INTEGER REFERENCES author(id),
+	CONSTRAINT GA PRIMARY KEY (genre_id, author_id)
+);
+
+CREATE TABLE IF NOT EXISTS author_album (
+	album_id INTEGER REFERENCES album(id),
+	author_id INTEGER REFERENCES author(id),
+	CONSTRAINT AA PRIMARY KEY (album_id, author_id)
+);
+
+CREATE TABLE IF NOT EXISTS collection_trek (
+	collection_id INTEGER REFERENCES collection(id),
+	trek_id INTEGER REFERENCES trek(id),
+	CONSTRAINT CT PRIMARY KEY (collection_id, trek_id)
+	);

@@ -1,0 +1,3 @@
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\HelloWold\x64\Debug\HelloWold.exe
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\HelloWold\x64\Debug\HelloWold.vcxproj.CopyComplete
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\HelloWold\x64\Debug\raylib.dll

@@ -1,0 +1,160 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "libpqxx-dir",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libpqxx-dir-Debug-375dbd6dcdef18c47190.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "C:/projects/DATABASE/libpqxx-7.9.0"
+				},
+				{
+					"build" : "libpqxx-dir/src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libpqxx-dir.src-Debug-485f285ce7c57fe11c15.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "C:/projects/DATABASE/libpqxx-7.9.0/src",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "libpqxx-dir/include",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libpqxx-dir.include-Debug-c196dcf008164e22940e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "C:/projects/DATABASE/libpqxx-7.9.0/include"
+				},
+				{
+					"build" : "libpqxx-dir/test",
+					"jsonFile" : "directory-libpqxx-dir.test-Debug-7f6a974d6ca019631ad2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "C:/projects/DATABASE/libpqxx-7.9.0/test",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "libpqxxCM",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "libpqxx",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "libpqxxCM::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-libpqxxCM-Debug-6ae63ce64e03793ac28e.json",
+					"name" : "libpqxxCM",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "pqxx::@9870d36b28a4f2882e25",
+					"jsonFile" : "target-pqxx-Debug-b0d580861335a72516af.json",
+					"name" : "pqxx",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "runner::@cb6fcaa015ef07c00d42",
+					"jsonFile" : "target-runner-Debug-14656cfcb19329b130ae.json",
+					"name" : "runner",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/projects/DATABASE/libpqxxCM/out/build/x64-Debug",
+		"source" : "C:/projects/DATABASE/libpqxxCM"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
