@@ -1,0 +1,3 @@
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\SnakeGame\x64\Debug\SnakeGame.vcxproj.CopyComplete
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\SnakeGame\x64\Debug\SnakeGame.exe
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\SnakeGame\x64\Debug\raylib.dll

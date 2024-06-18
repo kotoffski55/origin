@@ -1,0 +1,16 @@
+﻿  PONGgame.cpp
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\PONGgame\PONGgame.cpp(19,20): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\PONGgame\PONGgame.cpp(19,17): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\PONGgame\PONGgame.cpp(19,14): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\PONGgame\PONGgame.cpp(43,24): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\PONGgame\PONGgame.cpp(44,25): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\PONGgame\PONGgame.cpp(74,30): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\PONGgame\PONGgame.cpp(74,23): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\PONGgame\PONGgame.cpp(74,20): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\PONGgame\PONGgame.cpp(74,17): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\PONGgame\PONGgame.cpp(144,24): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\PONGgame\PONGgame.cpp(147,60): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\PONGgame\PONGgame.cpp(151,62): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  PONGgame.vcxproj -> C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\PONGgame\x64\Debug\PONGgame.exe
+  "pwsh.exe" не является внутренней или внешней
+  командой, исполняемой программой или пакетным файлом.

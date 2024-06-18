@@ -1,0 +1,8 @@
+﻿  SnakeGame.cpp
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\SnakeGame\SnakeGame.cpp(74,11): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\SnakeGame\SnakeGame.cpp(75,11): warning C4244: инициализация: преобразование "int" в "float", возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\SnakeGame\SnakeGame.cpp(83,58): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\SnakeGame\SnakeGame.cpp(83,35): warning C4244: аргумент: преобразование "float" в "int", возможна потеря данных
+  SnakeGame.vcxproj -> C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\SnakeGame\x64\Debug\SnakeGame.exe
+  "pwsh.exe" не является внутренней или внешней
+  командой, исполняемой программой или пакетным файлом.

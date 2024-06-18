@@ -1,5 +1,4 @@
 ﻿  HelloWold.cpp
-C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\HelloWold\HelloWold.cpp(43,36): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
   HelloWold.vcxproj -> C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\HelloWold\x64\Debug\HelloWold.exe
   "pwsh.exe" не является внутренней или внешней
   командой, исполняемой программой или пакетным файлом.

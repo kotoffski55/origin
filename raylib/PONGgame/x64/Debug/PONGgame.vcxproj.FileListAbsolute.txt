@@ -1,0 +1,3 @@
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\PONGgame\x64\Debug\PONGgame.exe
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\PONGgame\x64\Debug\PONGgame.vcxproj.CopyComplete
+C:\Users\kotof\OneDrive\Рабочий стол\HomeWorkC++\raylib\PONGgame\x64\Debug\raylib.dll
