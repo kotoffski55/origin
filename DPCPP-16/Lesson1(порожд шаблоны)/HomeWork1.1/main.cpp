@@ -1,68 +1,93 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cassert>
 
-class SqlSelectQueryBuilder 
-{
-protected:
-    std::string m_tableName;
-    std::vector<std::string> m_columns;
+
+class SqlSelectQueryBuilder {
+private:
+    std::string m_query;
     std::vector<std::pair<std::string, std::string>> m_whereConditions;
-    
+    std::vector<std::string> m_columns;
+    std::string m_fromTable;
 
 public:
-    
-    void AddColumn(const std::string& column) 
+    SqlSelectQueryBuilder() 
     {
-        m_columns.push_back(column);
+        m_query = "SELECT  * ";
     }
 
-    void AddFrom(const std::string& tableName) {
-        m_tableName = tableName;
+    void AddColumn(const std::string& column) 
+    {
+        if (!column.empty()) {
+            m_columns.push_back(column);
+        }
+    }
+
+    void AddFrom(const std::string& table) {
+        if (!table.empty()) {
+            m_fromTable = table;
+        }
     }
 
     void AddWhere(const std::string& column, const std::string& value) {
-        m_whereConditions.emplace_back(column, value);
+        if (!column.empty() && !value.empty()) {
+            m_whereConditions.emplace_back(column, value);
+        }
     }
 
-    bool BuildQuery() const
-    {
-        std::vector<std::string> m_columns;
-        if (m_columns.empty()) 
-        {
-            m_columns.push_back(" * "); 
+    std::string BuildQuery() const {
+        std::string result = m_query;
+        if (!m_columns.empty()) {
+            result += " " + std::string(m_columns.size(), ',') + " FROM " + m_fromTable;
         }
-
-        std::string query = "SELECT ";
-        for (const auto& column : m_columns) {
-            query += column + ", ";
+        else {
+            result += " FROM " + m_fromTable;
         }
-        query.pop_back();
-        query += "FROM " + m_tableName;
-
         if (!m_whereConditions.empty()) {
-            query += " WHERE ";
-            for (size_t i = 0; i < m_whereConditions.size(); ++i) {
-                query += m_whereConditions[i].first + "=" + m_whereConditions[i].second;
-                if (i != m_whereConditions.size() - 1) {
-                    query += " AND ";
-                }
+            for (const auto& cond : m_whereConditions) {
+                result += " WHERE " + cond.first + "=" + cond.second;
             }
         }
-
-        query += ";";
-        return true;
+        result += ";";
+        return result;
     }
 };
 
 int main() {
-    SqlSelectQueryBuilder query_builder;
-    query_builder.AddColumn("name");
-    query_builder.AddColumn("phone");
-    query_builder.AddFrom("students");
-    query_builder.AddWhere("id", "42");
-    query_builder.AddWhere("name", "John");
-     static_assert(query_builder.BuildQuery(), "SELECT name, phone FROM students WHERE id=42 AND name=John;");
+    //check empty
+    {
+        SqlSelectQueryBuilder query_builder;
+        auto query = query_builder.BuildQuery();
+        assert(query.find("SELECT  * ") == 0); //start from SELECT  * 
+        assert(query.rfind(";") == (query.size() - 1)); //ends with ;
+    }
+    //check tz
+    {
+        SqlSelectQueryBuilder query_builder;
+        query_builder.AddColumn("name");
+        query_builder.AddColumn("phone");
+        query_builder.AddFrom("students");
+        query_builder.AddWhere("id", "42");
+        query_builder.AddWhere("name", "John");
+        auto query = query_builder.BuildQuery();
+        std::cout << query << std::endl;
+        assert(query == "SELECT name, phone FROM students WHERE id=42 AND name=John;");
+    }
+    //check tz change order + rename table
+    {
+        SqlSelectQueryBuilder query_builder;
+        query_builder.AddColumn("name");
+        query_builder.AddColumn("phone");
+        query_builder.AddFrom("students");
+        query_builder.AddWhere("id", "42");
+        query_builder.AddWhere("name", "John");
+        auto query = query_builder.BuildQuery();
+        query_builder.AddFrom("prepods");
+        auto query = query_builder.BuildQuery();
+        assert(query == "SELECT name, phone FROM prepods WHERE id=42 AND name=John;");
+    }
 
+ 
     return 0;
 }
