@@ -12,9 +12,20 @@ void Stopwatch::start()
 
 }
 
+void Stopwatch::stop()
+{
+    m_timer->stop();
+}
+
+void Stopwatch::clear()
+{
+   time = 0;
+   emit sig_set_time(time);
+}
+
 void Stopwatch::set_time()
 {
-   time++;
+   time += 0.1;
    emit sig_set_time(time);
 }
 

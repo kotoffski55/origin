@@ -21,6 +21,9 @@ public:
 private:
     Ui::MainWindow *ui;
     Stopwatch *m_stopwatch;
+    int lapCount;
+    double lastLapTime;
+
 
 
 
@@ -28,5 +31,7 @@ private slots:
 
     void setTime(double time);
     void on_pb_start_stop_clicked(bool checked);
+    void on_pb_clear_clicked();
+    void on_pb_lap_clicked();
 };
 #endif // MAINWINDOW_H

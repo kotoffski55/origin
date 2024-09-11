@@ -10,9 +10,12 @@ class Stopwatch : public QObject {
 public:
     Stopwatch(QObject *parent = nullptr);
     void start();
+    void stop();
+    void clear();
+    double Time() const { return time; }
 
 signals:
-    void sig_start();
+    void sig_clear();
     void sig_set_time(double time);
 
 private slots:
