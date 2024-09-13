@@ -23,12 +23,13 @@ private:
     Stopwatch *m_stopwatch;
     int lapCount;
     double lastLapTime;
+    double lapTime;
 
 
 
 
 private slots:
-
+    void setInfo(int lapCount ,double lastLapTime);
     void setTime(double time);
     void on_pb_start_stop_clicked(bool checked);
     void on_pb_clear_clicked();

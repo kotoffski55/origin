@@ -1,9 +1,9 @@
 #include "mainwindow.h"
-#include "./ui_mainwindow.h"
+#include "ui_mainwindow.h"
 #include "stopwatch.h"
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow), lapCount(0) , lastLapTime(0)
+    : QMainWindow(parent), ui(new Ui::MainWindow)
 
 {
     ui->setupUi(this);
@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pb_lap->setEnabled(false);
     m_stopwatch = new Stopwatch(this);
     connect(m_stopwatch, &Stopwatch::sig_set_time, this, &MainWindow::setTime);
+    connect(m_stopwatch, &Stopwatch::sig_lap, this, &MainWindow::setInfo);
 
 
 }
@@ -21,6 +22,11 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setInfo(int lapCount, double LapTime)
+{
+    ui->tb_info->append(QString("Круг %1, время: %2 сек").arg(lapCount).arg(LapTime));
 }
 
 void MainWindow::on_pb_start_stop_clicked(bool checked)
@@ -46,6 +52,7 @@ void MainWindow::setTime(double time)
 }
 
 
+
 void MainWindow::on_pb_clear_clicked()
 {
     m_stopwatch->clear();
@@ -58,10 +65,6 @@ void MainWindow::on_pb_clear_clicked()
 
 void MainWindow::on_pb_lap_clicked()
 {
-    lapCount++;
-    double currentLapTime = m_stopwatch->Time();
-    double lapTime = currentLapTime - lastLapTime;
-    lastLapTime = currentLapTime;
-    ui->tb_info->append(QString("Круг %1, время: %2 сек").arg(lapCount).arg(lapTime));
+   m_stopwatch->lap();
 }
 
