@@ -42,6 +42,8 @@ void MainWindow::on_pb_start_stop_clicked(bool checked)
     {
         ui->pb_start_stop->setText("СТАРТ");
         m_stopwatch->stop();
+        ui->pb_lap->setEnabled(false);
+
     }
 
 }
